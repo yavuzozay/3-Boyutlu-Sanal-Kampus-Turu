@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2334917647152720439
+--- !u!114 &-5261603101989439328
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,26 +20,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: water
-  m_Shader: {fileID: -6465566751694194690, guid: fe3306b0dba687246b22db4736991410, type: 3}
+  m_Name: trashCan_foor
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_13ca366875c84d06986045051d7c98b8:
-        m_Texture: {fileID: 2800000, guid: e2f118f3b59693948aa5748b586ec0e2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_db9b0fe6c3104be4a39a3ed2b5ba226d:
-        m_Texture: {fileID: 2800000, guid: 2ced04a7e11066b4ea1942cc7b60083c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -97,11 +90,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_26590b83f2ea4a0eb15cfa35d0db9386: 0.5
-    - Vector1_7815b5934ea14570a1a22b98485a7ceb: 0.5
-    - Vector1_80082c7f916b4196946680b5cc5151e0: 1
-    - Vector1_8267bed4754a478d820398e3cbbc313b: 0.5
-    - Vector1_f752c1dad06741938e2c60aaddc8a65a: 0.766
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -116,12 +104,12 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Metallic: 0
+    - _Metallic: 0.542
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.933
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -129,9 +117,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_1f5396f997b84b26941e1039ef3ae2c5: {r: 0, g: 0.82152665, b: 0.8773585, a: 0.29803923}
-    - Color_3720ab2d8e3b44a09b961eacf1f1d35e: {r: 0.23474543, g: 0.5747154, b: 0.7924528, a: 0.92156863}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.26321462, g: 0.8396226, b: 0.24871837, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
