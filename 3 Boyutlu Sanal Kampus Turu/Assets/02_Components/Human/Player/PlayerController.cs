@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     {
         // h_input = Input.GetAxisRaw("Horizontal");
         v_input = Input.GetAxis("Vertical");
+        if (v_input < 0)
+            v_input = 0;
         mouseX = Input.GetAxis("Mouse X");
         if(Input.GetKey(KeyCode.LeftShift))
         {
