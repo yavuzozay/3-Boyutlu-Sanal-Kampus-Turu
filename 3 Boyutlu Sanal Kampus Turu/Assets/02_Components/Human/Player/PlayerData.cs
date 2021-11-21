@@ -5,16 +5,22 @@ using UnityEngine;
 public class PlayerData : MonoSingleton<PlayerData>
 {
     //Transform
-    public Vector3 _aimPos;
+    private Vector3 _aimPos;
 
-    public Vector3 _aimRot;
+    private Vector3 _aimRot;
 
     //Speed
     private float _forwardSpeed;
     private float _horizontalSpeed;
+    [SerializeField] private float _speedX;
 
 
     #region speed getter&setter
+    public float speedX
+    {
+        get { return _speedX; }
+       
+    }
     public float forwardSpeed
     {
         get { return this._forwardSpeed; }
