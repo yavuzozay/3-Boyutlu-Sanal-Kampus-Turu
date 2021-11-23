@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour
     }
     void CheckInput()
     {
+        if (GameState.Instance.curState != States.Player)
+            return;
         // h_input = Input.GetAxisRaw("Horizontal");
         v_input = Input.GetAxis("Vertical");
         if (v_input < 0)

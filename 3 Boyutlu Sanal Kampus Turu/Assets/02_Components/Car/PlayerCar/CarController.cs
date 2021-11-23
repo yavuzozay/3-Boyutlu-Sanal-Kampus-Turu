@@ -21,16 +21,12 @@ public struct Wheel
 public class CarController : MonoBehaviour
 {
 
-    [SerializeField]
-    private float maxAcceleration = 20.0f;
-    [SerializeField]
-    private float turnSensitivity = 1.0f;
-    [SerializeField]
-    private float maxSteerAngle = 45.0f;
-    [SerializeField]
-    private Vector3 _centerOfMass;
-    [SerializeField]
-    private List<Wheel> wheels;
+    [SerializeField] private float maxAcceleration = 20.0f;
+    [SerializeField] private float turnSensitivity = 1.0f;
+    [SerializeField] private float maxSteerAngle = 45.0f;
+    [SerializeField] private Vector3 _centerOfMass;
+    [SerializeField] private List<Wheel> wheels;
+  
 
     private float inputX, inputY;
 
@@ -58,6 +54,11 @@ public class CarController : MonoBehaviour
 
     private void GetInputs()
     {
+        if (GameState.Instance.curState != States.Car)
+        {
+            _rb.velocity = new Vector3(0, 0, 0);
+            return;
+        }
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
     }
@@ -69,7 +70,14 @@ public class CarController : MonoBehaviour
             wheel.collider.motorTorque = inputY * maxAcceleration * 500 * Time.fixedDeltaTime;
         }
     }
+    private void CheckSpeed()
+    {
+        
+        //if(GetComponent<Rigidbody>().velocity>20f)
+       // {
 
+        //}
+    }
     private void Turn()
     {
         foreach (var wheel in wheels)
