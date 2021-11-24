@@ -9,26 +9,39 @@ public enum States
 }
 public class GameState : MonoSingleton<GameState>
 {
-  
-   
+
+    private GameObject player;
+    [SerializeField]private Transform playerCarPos;
     public States curState;
     private void Awake()
     {
-        curState = States.Car;
+        curState = States.Player;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
     {
-        CheckCamera();
+     
+        CheckState();
     }
-    void CheckCamera()
+   void CheckState()
     {
-      /*  string statesString = curState.ToString();
-        switch(statesString)
+        if (GameState.Instance.curState == States.Player)
         {
-            case "Player":  { virtualCam.LookAt = playerLookAt; } break;
-            case "Car":  { virtualCam.LookAt = carLookAt; } break;
-            default: break;
-        }*/
+            player.SetActive(true);
+            
+        }
+        else
+        {
+            if(playerCarPos!=null)
+            {
+                player.transform.position = playerCarPos.position - playerCarPos.right;
+                player.SetActive(false);
+
+            }
+
+
+        }
     }
+
 
 }

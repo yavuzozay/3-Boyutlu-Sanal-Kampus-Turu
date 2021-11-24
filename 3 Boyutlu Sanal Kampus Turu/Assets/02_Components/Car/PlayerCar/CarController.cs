@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public enum Axel
@@ -26,6 +27,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxSteerAngle = 45.0f;
     [SerializeField] private Vector3 _centerOfMass;
     [SerializeField] private List<Wheel> wheels;
+    [SerializeField] TextMeshProUGUI carSpeedText;
+    private float speed=0;
   
 
     private float inputX, inputY;
@@ -42,8 +45,16 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
+        if (GameState.Instance.curState != States.Car)
+        {
+            _rb.velocity = new Vector3(0, 0, 0);
+            carSpeedText.SetText("");
+            return;
+        }
         AnimateWheels();
-        GetInputs();
+        CheckInputs();
+        speed = _rb.velocity.magnitude * 3.6f;
+        carSpeedText.SetText("Speed :"+speed+"KM/H");
     }
 
     private void FixedUpdate()
@@ -52,15 +63,19 @@ public class CarController : MonoBehaviour
         Turn();
     }
 
-    private void GetInputs()
+    private void CheckInputs()
     {
-        if (GameState.Instance.curState != States.Car)
-        {
-            _rb.velocity = new Vector3(0, 0, 0);
-            return;
-        }
+       
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
+        if (_rb.velocity.magnitude > 15f)
+        {
+            inputY = 0;
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            GameState.Instance.curState = States.Player;
+        }
     }
 
     private void Move()
@@ -70,14 +85,7 @@ public class CarController : MonoBehaviour
             wheel.collider.motorTorque = inputY * maxAcceleration * 500 * Time.fixedDeltaTime;
         }
     }
-    private void CheckSpeed()
-    {
-        
-        //if(GetComponent<Rigidbody>().velocity>20f)
-       // {
-
-        //}
-    }
+ 
     private void Turn()
     {
         foreach (var wheel in wheels)

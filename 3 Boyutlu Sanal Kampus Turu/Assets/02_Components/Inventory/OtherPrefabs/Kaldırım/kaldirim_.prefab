@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7573329752556069826}
   - component: {fileID: 5691749489062221576}
   m_Layer: 0
-  m_Name: kaldirim
+  m_Name: kaldirim_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

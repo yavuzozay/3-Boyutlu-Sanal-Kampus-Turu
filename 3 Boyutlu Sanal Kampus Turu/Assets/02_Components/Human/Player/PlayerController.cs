@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private bool isSprinting;
     private float desiredAnimSpeed;
 
+    private bool canMove = true;
+
     //Input
     private float h_input;
     private float v_input;
@@ -42,14 +44,19 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+     
         CheckMovement();
         CheckInput();
         CheckAnimation();
     }
     private void FixedUpdate()
     {
-        ApplyMovement();
-        ApplyRotation();
+        if (canMove)
+        {
+
+            ApplyMovement();
+            ApplyRotation();
+        }
     }
     void CheckAnimation()
 
@@ -59,6 +66,7 @@ public class PlayerController : MonoBehaviour
         PlayerAnimator.SetBool("isOnGround", isOnGround);
         PlayerAnimator.SetFloat("Speed",Mathf.Lerp(PlayerAnimator.GetFloat("Speed"),desiredAnimSpeed,AnimationBlendSpeed*Time.deltaTime));
     }
+ 
     void CheckMovement()
     {
         isOnGround = characterController.isGrounded;
@@ -82,7 +90,14 @@ public class PlayerController : MonoBehaviour
     void CheckInput()
     {
         if (GameState.Instance.curState != States.Player)
+        {
+            canMove = false;
+           PlayerData.Instance.forwardSpeed=0;
+
             return;
+
+        }
+        canMove = true;
         // h_input = Input.GetAxisRaw("Horizontal");
         v_input = Input.GetAxis("Vertical");
         if (v_input < 0)
