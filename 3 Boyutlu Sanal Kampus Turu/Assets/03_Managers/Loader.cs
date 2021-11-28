@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Loader : MonoBehaviour
+public class Loader : MonoSingleton<Loader>
 {
-    // Start is called before the first frame update
-    void Start()
+public void LoadGameScene()
     {
-        
+        SceneManager.LoadScene(0);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void LoadLakeScene()
     {
-        
+        SceneManager.LoadScene(1);
+    }
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }

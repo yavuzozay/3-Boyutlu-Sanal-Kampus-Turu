@@ -53,8 +53,8 @@ public class CarController : MonoBehaviour
         }
         AnimateWheels();
         CheckInputs();
-        speed = _rb.velocity.magnitude * 3.6f;
-        carSpeedText.SetText("Speed :"+speed+"KM/H");
+        speed = (_rb.velocity.magnitude * 3.6f);
+        carSpeedText.SetText("Speed :"+Math.Round(speed,2)+"KM/H");
     }
 
     private void FixedUpdate()
