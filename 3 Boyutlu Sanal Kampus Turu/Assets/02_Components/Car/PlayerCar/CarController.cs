@@ -72,7 +72,7 @@ public class CarController : MonoBehaviour
         {
             inputY = 0;
         }
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             GameState.Instance.curState = States.Player;
         }

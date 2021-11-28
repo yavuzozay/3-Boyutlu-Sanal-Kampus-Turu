@@ -12,10 +12,10 @@ public class GameState : MonoSingleton<GameState>
 
     private GameObject player;
     [SerializeField]private Transform playerCarPos;
-    public States curState;
+    public States curState=States.Player;
     private void Awake()
     {
-        curState = States.Player;
+        
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()

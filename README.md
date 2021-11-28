@@ -1,3 +1,5 @@
-# 3-Boyutlu-Sanal-Kampus-Turu
+# 3 Boyutlu Sanal Kampus Turu
  
-Hello World!
+Karakter ve araba kontrolleriyle yapay bir kampüs alanı tanıtılması hedeflenmektedir.
+## UML DİYAGRAMI
+<img src="/Previews/UmlDiagram.png" width="150" height="150" /> <br> 

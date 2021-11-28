@@ -39,4 +39,8 @@ public class MenuUI : MonoBehaviour
     {
         Loader.Instance.LoadScene(selectedScene);
     }
+    public void Quit()
+    {
+        Application.Quit();        
+    }
 }
