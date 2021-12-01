@@ -10,6 +10,13 @@ public class MenuUI : MonoBehaviour
     [SerializeField] private Sprite bgImage;
     [SerializeField] private Sprite bgImage2;
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private Button controlsButton;
+    [SerializeField] private Button closeControlBtn;
+
+    private bool isControlPanelActive = false;
+
+
     private Image panelBGImage;
 
     private void Awake()
@@ -18,11 +25,26 @@ public class MenuUI : MonoBehaviour
     }
     private void Start()
     {
+        controlsPanel.SetActive(isControlPanelActive);
+
         dropdown.onValueChanged.AddListener(delegate {
             DropdownValueChanged(dropdown);
         });
         panelBGImage.sprite = bgImage;
+        controlsButton.onClick.AddListener(SetControlPanel);
+        closeControlBtn.onClick.AddListener(CloseControlPanel);
 
+
+    }
+    private void CloseControlPanel()
+    {
+        isControlPanelActive = false;
+        controlsPanel.SetActive(isControlPanelActive);
+    }
+    private void SetControlPanel()
+    {
+        isControlPanelActive = true;
+        controlsPanel.SetActive(isControlPanelActive);
     }
     void DropdownValueChanged(Dropdown change)
     {
