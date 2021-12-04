@@ -21,10 +21,5 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
             return instance;
         }
     }
-    private void Awake()
-    {
-
-        DontDestroyOnLoad(FindObjectOfType(typeof(T)));
-
-    }
+ 
 }

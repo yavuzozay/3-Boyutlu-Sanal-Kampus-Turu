@@ -7,6 +7,7 @@ public class Loader : MonoSingleton<Loader>
 {
 public void LoadGameScene()
     {
+     
         SceneManager.LoadScene(1);
     }
     public void LoadLakeScene()
