@@ -1005,7 +1005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6935092518601185028}
   - component: {fileID: 8886411220926277986}
-  - component: {fileID: 512360458701235827}
+  - component: {fileID: 1306017954370044556}
   m_Layer: 0
   m_Name: PlayerCar
   m_TagString: Untagged
@@ -1047,7 +1047,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &512360458701235827
+--- !u!114 &1306017954370044556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1064,16 +1064,17 @@ MonoBehaviour:
   maxSteerAngle: 45
   _centerOfMass: {x: 0, y: 0, z: 0}
   wheels:
-  - model: {fileID: 6128826259826228975}
-    collider: {fileID: 128834897602650496}
+  - model: {fileID: 0}
+    collider: {fileID: 0}
     axel: 0
-  - model: {fileID: 1266515663808123356}
-    collider: {fileID: 8787927500745902392}
-    axel: 1
-  - model: {fileID: 4988350418632005625}
-    collider: {fileID: 3307910819261243585}
+  - model: {fileID: 0}
+    collider: {fileID: 0}
     axel: 0
-  - model: {fileID: 2237148878199969785}
-    collider: {fileID: 7852593211511854597}
-    axel: 1
+  - model: {fileID: 0}
+    collider: {fileID: 0}
+    axel: 0
+  - model: {fileID: 0}
+    collider: {fileID: 0}
+    axel: 0
   carSpeedText: {fileID: 0}
+  _isInteractedThis: 0

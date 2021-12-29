@@ -28,9 +28,14 @@ public class CarController : MonoBehaviour
     [SerializeField] private Vector3 _centerOfMass;
     [SerializeField] private List<Wheel> wheels;
     [SerializeField] TextMeshProUGUI carSpeedText;
+    [SerializeField]private bool _isInteractedThis=false;
     private float speed=0;
   
-
+    public bool isInteractedThis
+    {
+        get { return _isInteractedThis; }
+        set { _isInteractedThis = value; }
+    }
     private float inputX, inputY;
 
     private Rigidbody _rb;
@@ -51,16 +56,29 @@ public class CarController : MonoBehaviour
             carSpeedText.SetText("");
             return;
         }
-        AnimateWheels();
-        CheckInputs();
-        speed = (_rb.velocity.magnitude * 3.6f);
-        carSpeedText.SetText("Speed :"+Math.Round(speed,2)+"KM/H");
+       if(isInteractedThis)
+        {
+            AnimateWheels();
+            CheckInputs();
+            speed = (_rb.velocity.magnitude * 3.6f);
+            carSpeedText.SetText("Speed :" + Math.Round(speed, 2) + "KM/H");
+        }
+        else
+        {
+            _rb.velocity = new Vector3(0, 0, 0);
+
+        }
+
     }
 
     private void FixedUpdate()
     {
-        Move();
-        Turn();
+        if(isInteractedThis)
+        {
+            Move();
+            Turn();
+        }
+      
     }
 
     private void CheckInputs()
@@ -75,6 +93,7 @@ public class CarController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
             GameState.Instance.curState = States.Player;
+            _isInteractedThis = false;
         }
     }
 

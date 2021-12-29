@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoSingleton<CameraController>
 {
     CinemachineVirtualCamera virtualCam;
-    [SerializeField] Transform playerLookAt,playerPos;
-    [SerializeField] Transform carLookAt,carPos;
+   [SerializeField] private Transform playerLookAt,playerPos;
+   private Transform carLookAt,carPos;
+    public Transform CarLookAt
+    {
+        set { carLookAt = value; }
+    }
+    public Transform CarPos
+    {
+        set { carPos = value; }
+    }
     private void Awake()
     {
         virtualCam = GetComponent<CinemachineVirtualCamera>();
