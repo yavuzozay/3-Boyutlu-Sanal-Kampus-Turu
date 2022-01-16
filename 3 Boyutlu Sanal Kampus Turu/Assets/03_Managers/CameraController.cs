@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CameraController : MonoSingleton<CameraController>
+public class CameraController : MonoBehaviour
 {
     CinemachineVirtualCamera virtualCam;
-   [SerializeField] private Transform playerLookAt,playerPos;
+    private Transform playerLookAt,playerPos;
    private Transform carLookAt,carPos;
+    private GameObject player;
     public Transform CarLookAt
     {
         set { carLookAt = value; }
@@ -21,8 +22,18 @@ public class CameraController : MonoSingleton<CameraController>
   
     private void Awake()
     {
-        virtualCam = GetComponent<CinemachineVirtualCamera>();
+        
 
+        virtualCam = GetComponent<CinemachineVirtualCamera>();
+    
+        
+
+
+    }
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerLookAt = player.transform.GetChild(2);
     }
     void Update()
     {
@@ -34,8 +45,8 @@ public class CameraController : MonoSingleton<CameraController>
         switch (statesString)
         {
             case "Player": { 
-                    virtualCam.LookAt = playerLookAt;
-                    virtualCam.Follow = playerPos;
+                    virtualCam.LookAt = playerLookAt.transform;
+                    virtualCam.Follow = player.transform;
                 } break;
             case "Car": {
                     virtualCam.LookAt = carLookAt;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoSingleton<PlayerData>
 {
@@ -8,12 +9,13 @@ public class PlayerData : MonoSingleton<PlayerData>
     private Vector3 _aimPos;
 
     private Vector3 _aimRot;
-
+ 
+   
     //Speed
     private float _forwardSpeed;
     private float _horizontalSpeed;
     [SerializeField] private float _speedX;
-
+  
 
     #region speed getter&setter
     public float speedX
@@ -46,4 +48,11 @@ public class PlayerData : MonoSingleton<PlayerData>
         set { this._aimRot =value; }
     }
     #endregion
+
+    #region 
+  
+  
+    
+    #endregion
+   
 }

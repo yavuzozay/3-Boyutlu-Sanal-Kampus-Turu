@@ -9,13 +9,15 @@ public enum States
 }
 public class GameState : MonoSingleton<GameState>
 {
-
+    private CameraController cameraController;
     private GameObject player;
     [SerializeField]private Transform playerCarPos;
     public States curState=States.Player;
     private void Awake()
     {
+        base.Awake();
         player = GameObject.FindGameObjectWithTag("Player");
+        cameraController = Camera.main.transform.parent.transform.GetChild(0).GetComponent<CameraController>();
 
     }
     private void Update()
@@ -34,8 +36,7 @@ public class GameState : MonoSingleton<GameState>
         {
             if(playerCarPos!=null)
             {
-                player.transform.position = CameraController.Instance.CarPos.position - playerCarPos.right*2
-                    ;
+                player.transform.position = cameraController.CarPos.position - playerCarPos.right*2  ;
                 player.SetActive(false);
 
             }

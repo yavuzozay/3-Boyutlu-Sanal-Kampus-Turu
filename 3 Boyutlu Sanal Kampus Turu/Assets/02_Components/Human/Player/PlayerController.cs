@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,14 +29,17 @@ public class PlayerController : MonoBehaviour
     [Range(1.2f, 2.5f)] [SerializeField] float speedFactor=1.5f;
     
     [SerializeField] float rotationSpeed;
-    
-    
-   
+
+    private Vector3 kampusStartPos;
+    private Vector3 lakeStartPos;
+
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         PlayerAnimator = GetComponent<Animator>();
+        kampusStartPos = new Vector3(382, 0, 26);
+        lakeStartPos = new Vector3(0, 0, 0);
     }
     private void Start()
     {
@@ -138,6 +142,33 @@ public class PlayerController : MonoBehaviour
 
     {
      transform.Rotate(0, mouseX*rotationSpeed*Time.fixedDeltaTime, 0);
+
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex == 1)
+        {
+            characterController.enabled = false;
+            transform.position = kampusStartPos;
+            characterController.enabled = true;
+        }
+        else if (scene.buildIndex == 2)
+        {
+            characterController.enabled = false;
+            transform.position = lakeStartPos;
+            characterController.enabled = true;
+            //player.transform.position = pos;
+
+        }
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
 
     }
 }

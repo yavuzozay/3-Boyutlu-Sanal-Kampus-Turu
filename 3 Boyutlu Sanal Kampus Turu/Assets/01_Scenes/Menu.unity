@@ -542,53 +542,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194278861}
   m_CullTransparentMesh: 1
---- !u!1 &293043970
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 293043972}
-  - component: {fileID: 293043971}
-  m_Layer: 0
-  m_Name: WeatherManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &293043971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293043970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7aeca3b9424e4f4980e7b38fb0af67f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  states: 0
-  rain: {fileID: 6208204132894552421, guid: 54fa160c54b8d714f96a471ce5106ba4, type: 3}
-  snow: {fileID: 6208204132894552421, guid: fdacc5880ee8e8545937ed4b16bbe693, type: 3}
-  sunny: {fileID: 5195516725004320639, guid: e90dfe272bd5a85428bbfda9fe46abe8, type: 3}
---- !u!4 &293043972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293043970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 379.99487, y: 1.3213565, z: 25.96176}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &372273255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4277,6 +4230,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662790153}
   m_CullTransparentMesh: 1
+--- !u!1001 &1666089011
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 379.99487
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3213565
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.96176
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889977, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000667088456889983, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
+      propertyPath: m_Name
+      value: WeatherManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d7e7fbc92e372a45afc2b327502d429, type: 3}
 --- !u!1 &1677973350
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,6 +5581,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2025692319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2025692321}
+  - component: {fileID: 2025692320}
+  m_Layer: 0
+  m_Name: soundmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2025692320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025692319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf886f69a3bd5ad4fa8144093ebc36af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2025692321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025692319}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 402.375, y: 226.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076460820
 GameObject:
   m_ObjectHideFlags: 0
