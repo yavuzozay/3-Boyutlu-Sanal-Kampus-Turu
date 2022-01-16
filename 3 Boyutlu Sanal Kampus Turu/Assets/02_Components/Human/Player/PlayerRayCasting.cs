@@ -32,7 +32,6 @@ public class PlayerRayCasting : MonoBehaviour
         if(Physics.Raycast(transform.position+new Vector3(0, 1, 0), transform.TransformDirection(Vector3.forward),out hit,maxDistance))
         {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            Debug.Log(hit.collider.name);
             Debug.DrawRay(transform.position + new Vector3(0, 1, 0), transform.TransformDirection(Vector3.forward)*hit.distance,Color.black);
             if (interactable != null)
             {

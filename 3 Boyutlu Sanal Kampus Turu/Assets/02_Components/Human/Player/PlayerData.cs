@@ -19,7 +19,7 @@ public class PlayerData : MonoSingleton<PlayerData>
     public float speedX
     {
         get { return _speedX; }
-       
+
     }
     public float forwardSpeed
     {

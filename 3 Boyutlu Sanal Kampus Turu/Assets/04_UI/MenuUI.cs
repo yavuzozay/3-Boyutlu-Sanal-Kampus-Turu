@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MenuUI : MonoBehaviour
 {
     [SerializeField] private Dropdown dropdown;
+    [SerializeField] private Dropdown weatherSettingsDD;
     int selectedScene=1;
     [SerializeField] private Sprite bgImage;
     [SerializeField] private Sprite bgImage2;
@@ -36,6 +37,9 @@ public class MenuUI : MonoBehaviour
         dropdown.onValueChanged.AddListener(delegate {
             DropdownValueChanged(dropdown);
         });
+        weatherSettingsDD.onValueChanged.AddListener(delegate {
+            WeatherSettingsDDChanged(weatherSettingsDD);
+        });
         panelBGImage.sprite = bgImage;
         startBtn.onClick.AddListener(StartButton);
         settingsBtn.onClick.AddListener(SettingsButton);
@@ -63,6 +67,23 @@ public class MenuUI : MonoBehaviour
         settings.SetActive(false);
 
     }
+    private void WeatherSettingsDDChanged(Dropdown dropdown)
+    {
+        
+        switch (dropdown.value)
+        {
+            case 0: { Debug.Log("Sunny");
+        WeatherManager.Instance.SetStates(WeatherStates.Sunny);
+                }; break;
+            case 1: { Debug.Log("Rainy"); 
+        WeatherManager.Instance.SetStates(WeatherStates.Rainy);
+                }; break;
+            case 2: { Debug.Log("Snowy");
+                         WeatherManager.Instance.SetStates(WeatherStates.Snowy);
+                         }; break;
+            default: break;
+        }
+    }
     private void DropdownValueChanged(Dropdown change)
     {
         selectedScene = change.value+1;
@@ -76,8 +97,9 @@ public class MenuUI : MonoBehaviour
     }
     private  void StartButton()
     {
-        Loader.Instance.LoadScene(selectedScene);
+        Loader.LoadScene(selectedScene);
     }
+  
     private void SettingsButton()
     {
         settings.SetActive(true);

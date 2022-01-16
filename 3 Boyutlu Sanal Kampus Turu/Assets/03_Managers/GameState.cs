@@ -15,8 +15,8 @@ public class GameState : MonoSingleton<GameState>
     public States curState=States.Player;
     private void Awake()
     {
-        
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
     private void Update()
     {
@@ -34,7 +34,8 @@ public class GameState : MonoSingleton<GameState>
         {
             if(playerCarPos!=null)
             {
-                player.transform.position = playerCarPos.position - playerCarPos.right;
+                player.transform.position = CameraController.Instance.CarPos.position - playerCarPos.right*2
+                    ;
                 player.SetActive(false);
 
             }
@@ -42,6 +43,6 @@ public class GameState : MonoSingleton<GameState>
 
         }
     }
-
+   
 
 }

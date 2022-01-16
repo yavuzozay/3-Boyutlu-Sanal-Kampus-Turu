@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Loader : MonoSingleton<Loader>
+public static class Loader 
 {
-public void LoadGameScene()
+  
+public static void LoadGameScene()
     {
      
         SceneManager.LoadScene(1);
     }
-    public void LoadLakeScene()
+    public static void LoadLakeScene()
     {
         SceneManager.LoadScene(2);
     }
-    public void GoToMainMenu()
+    public static void GoToMainMenu()
     {
         SceneManager.LoadScene(0);
     }
-    public void LoadScene(int index)
+    public static void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
     }
+
+   
 }

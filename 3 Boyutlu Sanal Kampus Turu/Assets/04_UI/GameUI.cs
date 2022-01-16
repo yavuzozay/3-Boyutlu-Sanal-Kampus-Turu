@@ -6,7 +6,7 @@ public class GameUI : MonoBehaviour
 {
   public void GoToMenu()
     {
-        Loader.Instance.GoToMainMenu();
+        Loader.GoToMainMenu();
     }
  
 }

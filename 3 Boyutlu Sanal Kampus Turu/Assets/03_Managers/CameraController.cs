@@ -14,13 +14,16 @@ public class CameraController : MonoSingleton<CameraController>
     }
     public Transform CarPos
     {
+        get { return carPos; }
         set { carPos = value; }
     }
+   
+  
     private void Awake()
     {
         virtualCam = GetComponent<CinemachineVirtualCamera>();
-    }
 
+    }
     void Update()
     {
         CheckCamera();   

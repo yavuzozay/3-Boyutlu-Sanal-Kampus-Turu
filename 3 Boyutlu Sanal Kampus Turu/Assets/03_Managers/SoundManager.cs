@@ -12,13 +12,14 @@ public class SoundManager : MonoSingleton<SoundManager>
     }
     private void Awake()
     {
+        base.Awake();
         DontDestroyOnLoad(this);
-        bgAudioSource= gameObject.AddComponent<AudioSource>();
+        bgAudioSource = gameObject.AddComponent<AudioSource>();
         //bgAudioSource = GetComponent<AudioSource>();
         bgAudioSource.playOnAwake = true;
         bgAudioSource.loop = true;
-        
     }
+   
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.M))

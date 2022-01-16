@@ -11,11 +11,11 @@ public class MuteButton : MonoBehaviour
    
     private void Awake()
     {
-        DontDestroyOnLoad(this);
         //btn = GetComponent<Button>();
         img.sprite = mutedImg;
 
     }
+   
     private void Start()
     {
         btn.onClick.AddListener(MuteControl);
@@ -23,7 +23,6 @@ public class MuteButton : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(SoundManager.Instance.isMuted);
         if (SoundManager.Instance.isMuted)
         {
             img.sprite = unMutedImg;
