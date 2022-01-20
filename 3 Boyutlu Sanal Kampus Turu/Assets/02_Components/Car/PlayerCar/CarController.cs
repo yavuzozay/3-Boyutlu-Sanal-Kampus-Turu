@@ -30,6 +30,9 @@ public class CarController : MonoBehaviour
     [SerializeField] TextMeshProUGUI carSpeedText;
     [SerializeField]private bool _isInteractedThis=false;
     private float speed=0;
+    private GameObject player;
+    private GameObject shortLight,longLight,LightParent;
+    private int curLightMode = 0;//o kapalý 1 kýsa 2 uzun.
   
     public bool isInteractedThis
     {
@@ -40,7 +43,14 @@ public class CarController : MonoBehaviour
 
     private Rigidbody _rb;
 
-
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        LightParent = transform.GetChild(4).gameObject;
+        shortLight = LightParent.transform.GetChild(0).gameObject;
+        longLight = LightParent.transform.GetChild(1).gameObject;
+        
+    }
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -75,6 +85,8 @@ public class CarController : MonoBehaviour
     {
         if(isInteractedThis)
         {
+            player.SetActive(false);
+
             Move();
             Turn();
         }
@@ -90,13 +102,49 @@ public class CarController : MonoBehaviour
         {
             inputY = 0;
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            curLightMode++;
+            if(curLightMode==3) curLightMode=0;
+            CarLights();
+
+
+        }
         if(Input.GetKeyDown(KeyCode.F))
         {
+
             GameState.Instance.curState = States.Player;
+            player.transform.position = transform.position - transform.right * 2;
+            player.SetActive(true);
+
+
             _isInteractedThis = false;
         }
     }
-
+    private void CarLights()
+    {
+        switch (curLightMode)
+        {
+            case 0: {
+                    shortLight.SetActive(false);
+                    longLight.SetActive(false);
+                }break;
+            case 1: {
+                    shortLight.SetActive(true);
+                    longLight.SetActive(false);
+                }
+                break;
+            case 2: {
+                    shortLight.SetActive(false);
+                    longLight.SetActive(true);
+                }
+                break;
+            default: {
+                    shortLight.SetActive(false);
+                    longLight.SetActive(false);
+                } break;
+        }
+    }
     private void Move()
     {
         foreach (var wheel in wheels)

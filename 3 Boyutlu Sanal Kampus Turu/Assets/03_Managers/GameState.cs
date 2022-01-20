@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public enum States
 {
@@ -9,41 +10,36 @@ public enum States
 }
 public class GameState : MonoSingleton<GameState>
 {
-    private CameraController cameraController;
-    private GameObject player;
-    [SerializeField]private Transform playerCarPos;
-    public States curState=States.Player;
+   
+    public States curState;
     private void Awake()
     {
         base.Awake();
-        player = GameObject.FindGameObjectWithTag("Player");
-        cameraController = Camera.main.transform.parent.transform.GetChild(0).GetComponent<CameraController>();
-
+        curState = States.Player;
     }
-    private void Update()
+    private void OnSceneLoaded(Scene scene,LoadSceneMode mode)
     {
-     
-        CheckState();
-    }
-   void CheckState()
-    {
-        if (GameState.Instance.curState == States.Player)
+        if (scene.buildIndex == 0)//Menüdeyken playerýn görünmesin.
         {
-            player.SetActive(true);
-            
+            curState = States.Player;
+            PlayerData.Instance.gameObject.SetActive(false);
+
+
         }
         else
         {
-            if(playerCarPos!=null)
-            {
-                player.transform.position = cameraController.CarPos.position - playerCarPos.right*2  ;
-                player.SetActive(false);
-
-            }
-
-
+            PlayerData.Instance.gameObject.SetActive(true);
         }
     }
-   
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded+=OnSceneLoaded;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded-=OnSceneLoaded;
+
+    }
 
 }

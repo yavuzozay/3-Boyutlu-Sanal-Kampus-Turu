@@ -6,7 +6,20 @@ public class Rain :WeatherData
 {
     public override void ManageWeather()
     {
-        Debug.Log("Yaðmurlu günden selamlar !");
-        RenderSettings.skybox = skyboxMat;
+     
+
+
+        if (LightingManager.Instance.GetCycle() == Cycle.Morning)
+        {
+            Debug.Log("Yaðmurlu günden selamlar !");
+            RenderSettings.skybox = skyboxMat;
+            LightingManager.Instance.DefaultMorningMode();
+
+        }
+        else
+        {
+            LightingManager.Instance.DefaultNightMode();
+        }
+       
     }
 }

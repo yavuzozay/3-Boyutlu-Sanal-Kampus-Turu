@@ -100,6 +100,7 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     private void Update()
     {
         RenderSettings.skybox.SetFloat("_Rotation", Time.time * _rotSpeed);
+        RenderSettings.skybox.SetFloat("_Ex",.1f);
 
     }
 

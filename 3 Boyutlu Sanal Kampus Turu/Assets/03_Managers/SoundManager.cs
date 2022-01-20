@@ -13,7 +13,7 @@ public class SoundManager : MonoSingleton<SoundManager>
     private void Awake()
     {
         base.Awake();
-        DontDestroyOnLoad(this);
+       // DontDestroyOnLoad(this);
         bgAudioSource = gameObject.AddComponent<AudioSource>();
         //bgAudioSource = GetComponent<AudioSource>();
         bgAudioSource.playOnAwake = true;

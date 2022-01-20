@@ -44,7 +44,12 @@ public class CameraController : MonoBehaviour
         string statesString =GameState.Instance.curState.ToString();
         switch (statesString)
         {
-            case "Player": { 
+            case "Player": {
+                    if (playerLookAt == null || player == null)
+                    {
+                        player = GameObject.FindGameObjectWithTag("Player");
+                        playerLookAt = player.transform.GetChild(2);
+                    }
                     virtualCam.LookAt = playerLookAt.transform;
                     virtualCam.Follow = player.transform;
                 } break;
