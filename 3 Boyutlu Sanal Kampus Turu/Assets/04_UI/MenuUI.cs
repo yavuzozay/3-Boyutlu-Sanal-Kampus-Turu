@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuUI : MonoBehaviour
@@ -18,6 +19,9 @@ public class MenuUI : MonoBehaviour
     [SerializeField] private Button closeSettingsButton;
      [SerializeField] private Button startBtn, settingsBtn, exitBtn;
 
+     private Slider slider;
+    [SerializeField]private GameObject loadingScreen;
+
 
     private bool isControlPanelActive = false;
 
@@ -27,6 +31,7 @@ public class MenuUI : MonoBehaviour
     private void Awake()
     {
         panelBGImage = panel.GetComponent<Image>();
+        slider = loadingScreen.transform.GetChild(0).gameObject.GetComponent<Slider>();
     }
     private void Start()
     {
@@ -97,9 +102,31 @@ public class MenuUI : MonoBehaviour
     }
     private  void StartButton()
     {
-        Loader.LoadScene(selectedScene);
+        //Loader.LoadScene(selectedScene);
+         StartCoroutine(Loader.LoadAsynchrounously(selectedScene, loadingScreen));
+     //   Loader.LoadScene(selectedScene, loadingScreen);
     }
-  
+    IEnumerator LoadAsynchrounously(int index, GameObject loadingScreen)
+    {
+   loadingScreen.SetActive(true);
+      Slider  slider = loadingScreen.transform.GetChild(1).gameObject.GetComponent<Slider>();
+       Text text = slider.transform.GetChild(2).gameObject.GetComponent<Text>();
+       AsyncOperation operation = SceneManager.LoadSceneAsync(index);
+      // async.allowSceneActivation = false;
+
+       //slider.value = 0;
+       float progress = 0;
+       //async.allowSceneActivation = false;
+       while (!operation.isDone)
+       {
+           progress = Mathf.Clamp01(operation.progress / .9f) ;
+           Debug.Log(operation.progress);
+           slider.value = progress;
+           text.text = (int)progress*100+ "%100";
+
+       yield return null;
+       }
+    }
     private void SettingsButton()
     {
         settings.SetActive(true);
@@ -108,4 +135,7 @@ public class MenuUI : MonoBehaviour
     {
         Application.Quit();        
     }
+
+  
+   
 }

@@ -22,14 +22,12 @@ public class GameState : MonoSingleton<GameState>
         if (scene.buildIndex == 0)//Menüdeyken playerýn görünmesin.
         {
             curState = States.Player;
-            PlayerData.Instance.gameObject.SetActive(false);
-
-
-        }
-        else
-        {
             PlayerData.Instance.gameObject.SetActive(true);
+            PlayerData.Instance.GetComponent<CharacterController>().enabled = false;
+
+
         }
+     
     }
 
     private void OnEnable()

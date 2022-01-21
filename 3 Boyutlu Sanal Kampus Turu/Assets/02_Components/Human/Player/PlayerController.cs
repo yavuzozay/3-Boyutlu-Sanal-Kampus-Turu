@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         PlayerAnimator = GetComponent<Animator>();
-        kampusStartPos = new Vector3(382, 0, 26);
-        lakeStartPos = new Vector3(0, 0, 0);
+        kampusStartPos = new Vector3(382, 0.5f, 26);
+        lakeStartPos = new Vector3(0, 100, 0);
     }
     private void Start()
     {
@@ -146,16 +146,28 @@ public class PlayerController : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.buildIndex == 0)
+        {
+            characterController.enabled = false;
+            GameState.Instance.curState = States.Player;
+            
+        }
         if (scene.buildIndex == 1)
         {
             characterController.enabled = false;
             transform.position = kampusStartPos;
+            characterController.transform.position = kampusStartPos;
+            Debug.Log(transform.position);
             characterController.enabled = true;
         }
         else if (scene.buildIndex == 2)
         {
             characterController.enabled = false;
             transform.position = lakeStartPos;
+            characterController.transform.position = lakeStartPos;
+
+            Debug.Log(transform.position);
+
             characterController.enabled = true;
             //player.transform.position = pos;
 
