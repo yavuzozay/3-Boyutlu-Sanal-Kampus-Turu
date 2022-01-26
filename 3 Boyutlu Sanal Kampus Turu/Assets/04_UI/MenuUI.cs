@@ -37,7 +37,7 @@ public class MenuUI : MonoBehaviour
     {
         controlsPanel.SetActive(isControlPanelActive);
         settings.SetActive(false);
-
+        
 
         dropdown.onValueChanged.AddListener(delegate {
             DropdownValueChanged(dropdown);
@@ -52,8 +52,7 @@ public class MenuUI : MonoBehaviour
         controlsButton.onClick.AddListener(SetControlPanel);
         closeControlBtn.onClick.AddListener(CloseControlPanel);
         closeSettingsButton.onClick.AddListener(CloseSettings);
-
-
+        WeatherSettingsDDChanged(weatherSettingsDD);
     }
     private void CloseControlPanel()
     {
@@ -74,7 +73,7 @@ public class MenuUI : MonoBehaviour
     }
     private void WeatherSettingsDDChanged(Dropdown dropdown)
     {
-        
+
         switch (dropdown.value)
         {
             case 0: { Debug.Log("Sunny");
@@ -106,30 +105,12 @@ public class MenuUI : MonoBehaviour
          StartCoroutine(Loader.LoadAsynchrounously(selectedScene, loadingScreen));
      //   Loader.LoadScene(selectedScene, loadingScreen);
     }
-    IEnumerator LoadAsynchrounously(int index, GameObject loadingScreen)
-    {
-   loadingScreen.SetActive(true);
-      Slider  slider = loadingScreen.transform.GetChild(1).gameObject.GetComponent<Slider>();
-       Text text = slider.transform.GetChild(2).gameObject.GetComponent<Text>();
-       AsyncOperation operation = SceneManager.LoadSceneAsync(index);
-      // async.allowSceneActivation = false;
+  
 
-       //slider.value = 0;
-       float progress = 0;
-       //async.allowSceneActivation = false;
-       while (!operation.isDone)
-       {
-           progress = Mathf.Clamp01(operation.progress / .9f) ;
-           Debug.Log(operation.progress);
-           slider.value = progress;
-           text.text = (int)progress*100+ "%100";
-
-       yield return null;
-       }
-    }
     private void SettingsButton()
     {
         settings.SetActive(true);
+
     }
     private void Quit()
     {

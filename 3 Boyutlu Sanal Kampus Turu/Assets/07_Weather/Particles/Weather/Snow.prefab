@@ -284,9 +284,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0.2
-      minScalar: 1
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -337,7 +337,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -390,7 +390,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -606,9 +606,9 @@ ParticleSystem:
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.8
-      minScalar: 0
+      minMaxState: 3
+      scalar: 0.6
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -972,7 +972,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 2
@@ -1132,7 +1132,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 0
+    separateAxes: 1
   RotationModule:
     enabled: 0
     x:
@@ -1485,12 +1485,12 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -1
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1541,7 +1541,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1594,7 +1594,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -4759,7 +4759,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7073a45ed3cb0a841b26579a23285e2f, type: 2}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

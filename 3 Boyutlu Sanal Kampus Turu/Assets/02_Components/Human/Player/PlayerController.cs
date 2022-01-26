@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         PlayerAnimator = GetComponent<Animator>();
         kampusStartPos = new Vector3(382, 0.5f, 26);
-        lakeStartPos = new Vector3(0, 100, 0);
+        lakeStartPos = new Vector3(75, 15, 20);
     }
     private void Start()
     {

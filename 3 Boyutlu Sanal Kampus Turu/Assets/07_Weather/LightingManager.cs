@@ -28,6 +28,7 @@ public class LightingManager : MonoSingleton<LightingManager>
         base.Awake();
     }
     
+ 
     public void SetDayCylceRender(float ambientColor,float fogcolor,float sunColor, float fogDensity)
     {
         RenderSettings.ambientLight = AmbientColor.Evaluate(ambientColor);
