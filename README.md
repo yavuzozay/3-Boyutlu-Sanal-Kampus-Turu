@@ -42,12 +42,12 @@ Göl alanına geçiş<br>
 <img src="/Previews/startbtn2.gif" width="450" height="255" /> <br> 
 
 Araba modu <br>
-Interactable sistemi sayesinde istenilen araba kontrol edilebilir.
+Interactable sistemi sayesinde istenilen araba kontrol edilebilir.<br>
 <img src="/Previews/playertocarstate.gif" width="250" height="150" /> 
 <img src="/Previews/cartoPlayerstate.gif" width="250" height="150" /> <br> 
 
-Göl
+Göl <br>
 <img src="/Previews/lake.gif" width="450" height="255" /> <br> 
 
-Halı Saha
+Halı Saha <br>
 <img src="/Previews/haliSaha.png" width="450" height="255" /> <br> 
