@@ -14,7 +14,7 @@ public class WeatherManager : MonoSingleton<WeatherManager>
     [SerializeField] GameObject rain,snow,sunny;
     private float _rotSpeed;
     GameObject player;
-    Vector3 spawnpos = new Vector3(0, 0, 0);
+    Vector3 spawnpos = new Vector3(0, 10, 0);
     GameObject curWeatherEffect = null;
     //private WeatherData weatherData;
     WeatherData weatherData;
@@ -70,9 +70,6 @@ public class WeatherManager : MonoSingleton<WeatherManager>
                     {
                         curWeatherEffect = Instantiate(rain, spawnpos, Quaternion.identity);
                      
-
-
-
                     }
                     break;
                 case "Snowy":

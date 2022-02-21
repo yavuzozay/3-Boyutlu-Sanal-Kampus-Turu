@@ -159,6 +159,8 @@ public class PlayerController : MonoBehaviour
             characterController.transform.position = kampusStartPos;
             Debug.Log(transform.position);
             characterController.enabled = true;
+            EventManager.Fire_onWeatherEffectPosChanged(transform.position);
+
         }
         else if (scene.buildIndex == 2)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeatherEffectsPosController : MonoBehaviour
 {
-    [SerializeField] private Vector3 offset = new Vector3(0, 0, 0);
+    [SerializeField] private Vector3 offset = new Vector3(0, 2, 0);
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer==7)

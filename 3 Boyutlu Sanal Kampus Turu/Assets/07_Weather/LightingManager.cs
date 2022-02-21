@@ -38,7 +38,7 @@ public class LightingManager : MonoSingleton<LightingManager>
     }
     public void DefaultNightMode()
     {
-        SetDayCylceRender(1, 1, 1, .1f);
+        SetDayCylceRender(1, 1, 1, .08f);
     }
     public void DefaultMorningMode()
     {

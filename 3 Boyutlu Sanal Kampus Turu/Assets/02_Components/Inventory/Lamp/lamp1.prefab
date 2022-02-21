@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 6787525015598759677}
   - component: {fileID: 8779439010981841463}
   - component: {fileID: 4556434952346205253}
+  - component: {fileID: 1922559703901922665}
   m_Layer: 0
   m_Name: lamp1
   m_TagString: Untagged
@@ -190,3 +191,15 @@ CapsuleCollider:
   m_Height: 4.175308
   m_Direction: 1
   m_Center: {x: -0.01919163, y: 2.0778036, z: -0.026932327}
+--- !u!114 &1922559703901922665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7121925163752893410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab3924838767534e9e278e3a3c5f971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

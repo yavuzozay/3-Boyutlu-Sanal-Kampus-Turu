@@ -6,9 +6,16 @@ public class Sunny : WeatherData
 {
     public override void ManageWeather()
     {
-        Debug.Log("Güneþli günden selamlar !");
-       // GameObject.FindGameObjectWithTag("Player").transform.position += new Vector3(0, 100, 0);
-        RenderSettings.skybox = skyboxMat;
+        if (LightingManager.Instance.GetCycle() == Cycle.Morning)
+        {
+            Debug.Log("Yaðmurlu günden selamlar !");
+            RenderSettings.skybox = skyboxMat;
+           // LightingManager.Instance.DefaultMorningMode();
 
+        }
+        else
+        {
+            LightingManager.Instance.DefaultNightMode();
+        }
     }
 }

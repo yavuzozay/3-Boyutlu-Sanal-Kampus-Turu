@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 669621005492067696}
   - component: {fileID: 3363643050033047994}
   - component: {fileID: 5220491332206714128}
+  - component: {fileID: 7366303522397399104}
   m_Layer: 0
   m_Name: streetLamp
   m_TagString: Untagged
@@ -97,3 +98,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6756161864635921601, guid: 5ac0256e1c2446c4bab7074ee05eef2a, type: 3}
+--- !u!114 &7366303522397399104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3868297378226358383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab3924838767534e9e278e3a3c5f971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
